@@ -1,0 +1,23 @@
+select * from employees;
+-- 1.
+select last_name || ', ' || job_id as " Employee and Title "
+from employees;
+-- 2.
+select last_name , salary
+from employees
+where salary not between 1500 and 7000;
+-- 3.
+select last_name , salary , commission_pct
+from employees
+where commission_pct is not null
+order by salary desc , commission_pct desc;
+-- 4.
+select last_name , job_id , salary
+from employees
+where job_id in ( 'SA_REP' , 'PU_MAN' ) and salary not in ( 9500 , 9000 , 8000 );
+-- 5.
+select * from employees
+where upper (last_name) like upper ('s%');
+-- 6.
+select * from employees
+where upper(first_name) like upper('%e_');
